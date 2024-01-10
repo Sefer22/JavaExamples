@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloWorldController {
-
-    @GetMapping(path = "/hello")
-    public String hello(Model model) {
-        model.addAttribute("hello","Hello,World!");
-        return "hello";
-    }
-
-    @PostMapping(path = "/post")
-    public String nameToUpperCase(Model model, @RequestParam String name,@RequestParam String surname) {
-        String fullName=name+" "+surname;
-        fullName=fullName.toUpperCase();
-        model.addAttribute("fullname",fullName);
-        return "fullname";
-    }
+//
+//    @GetMapping(path = "/hello")
+//    public String hello(Model model) {
+//        model.addAttribute("hello","Hello,World!");
+//        return "hello";
+//    }
+//
+//    @PostMapping(path = "/post")
+//    public String nameToUpperCase(Model model, @RequestParam String name,@RequestParam String surname) {
+//        String fullName=name+" "+surname;
+//        fullName=fullName.toUpperCase();
+//        model.addAttribute("fullname",fullName);
+//        return "fullname";
+//    }
 }
 
