@@ -1,19 +1,25 @@
 package com.example.myfirstspringapp.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Student {
 
     @Id
+    @Column(name="Student_ID")
     private Integer id;
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
     private String surname;
+
+    @ManyToMany
+            @JoinTable(name = "Students_Courses",
+            joinColumns = @JoinColumn(name = "Student_ID"),
+            inverseJoinColumns = @JoinColumn(name = "Course_ID"))
+    List<Course> courses;
 
     public Student() {
 
